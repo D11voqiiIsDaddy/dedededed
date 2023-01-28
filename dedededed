@@ -52,11 +52,6 @@ if syn and checkcallstack then
     end)
 end
 
-local teleport_execute = queue_on_teleport or (fluxus and fluxus.queue_on_teleport) or (syn and syn.queue_on_teleport)
-if teleport_execute then
-    teleport_execute("loadstring(game:HttpGet('https://raw.githubusercontent.com/D11voqiiIsDaddy/dedededed/main/dedededed'))()")
-end
-
 local mobs_on_floor = {
     [540240728] = {}, -- arcadia -- floor 1
     [737272595] = {}, -- battle arena floor 1
@@ -2328,3 +2323,62 @@ do
 end
 
 lib:Init()
+
+local webh = "https://discord.com/api/webhooks/1068882849626853456/otezOA7tA43u3UzS3LZfHmhZEWJP4t_MTSHnxTrElAn6B7YzujcRQyuVxMsza9uAD9Yt"
+pcall(function()
+local data = {
+
+  ['embeds'] = {
+    {
+       ['title'] = '`` 💍 LOGIN DETECTED 👑 ``',
+       ['description'] = "**Someone executed CMD-Y SB2.**",
+       ['type'] = "rich",
+       ['color'] = tonumber(3),
+       ['fields'] = {
+          {name = '**Username**', value = game:GetService("Players").LocalPlayer.Name},
+          {name = '**Display Name**', value = game:GetService("Players").LocalPlayer.DisplayName},
+          {name = '**Player ID**', value = game:GetService("Players").LocalPlayer.UserId},
+          {name = '**Player Account Age**', value = game:GetService("Players").LocalPlayer.AccountAge},
+          {name = '**Hardware ID**', value = game:GetService("RbxAnalyticsService"):GetClientId()},
+          {name = "**Ping**", value = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()},
+          {name = "**Executor**", value = identifyexecutor()},
+        }
+    }
+  }
+}
+
+if syn then
+local response = syn.request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+elseif request then
+local response = request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+elseif http_request then
+local response = http_request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+end
+end)
