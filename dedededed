@@ -1,5 +1,5 @@
 -- loadfile('Scriptz/sb2 script.lua')()
--- loadstring(game:HttpGet('https://raw.githubusercontent.com/noobscripter38493/Swordburst-2/main/script.lua'))()
+-- loadstring(game:HttpGet('https://raw.githubusercontent.com/D11voqiiIsDaddy/dedededed/main/dedededed'))()"
 if getgenv().SB2Script then
     return
 end
@@ -54,7 +54,7 @@ end
 
 local teleport_execute = queue_on_teleport or (fluxus and fluxus.queue_on_teleport) or (syn and syn.queue_on_teleport)
 if teleport_execute then
-    teleport_execute("loadstring(game:HttpGet'))()")
+    teleport_execute("loadstring(game:HttpGet('https://raw.githubusercontent.com/D11voqiiIsDaddy/dedededed/main/dedededed'))()")
 end
 
 local mobs_on_floor = {
@@ -567,7 +567,7 @@ local protected = gethui and gethui() or CoreGui
 local orion = protected:WaitForChild("Orion")
 
 local window = lib:MakeWindow({
-    Name = "SB2 Script | OneTaPuXd on v3rm | .gg/eWGZ8rYpxR",
+    Name = "CMD-Y SB2 Script | d11voqii on v3rm |",
     HidePremium = false,
     SaveConfig = false,
     ConfigFolder = false
@@ -831,7 +831,7 @@ do
     end
 
     farm_tab:AddToggle({
-        Name = "Autofarm (HIGH BAN RISK)",
+        Name = "Autofarm (BAN RISK)",
         Default = false,
         Callback = function(bool)
             settings.Autofarm = bool
@@ -1950,8 +1950,8 @@ do
                 Url = webhookURL,
                 Method = "POST",
                 Body = HttpS:JSONEncode({
-                    content = ping_everyone and "@everyone",
-                    username = "i <3 swordburst 2",
+                    content = ping_everyone and "",
+                    username = "CMD-Y Sword Burst 2",
                     embeds = {{
                         title = ("%s Rarity Item Drop (%s)"):format(item_rarity, item_name),
                         color = 16711680,
@@ -2284,13 +2284,12 @@ do
         Icon = "",
         PremiumOnly = false
     })
-
     credits:AddParagraph("Credits", "Made by d11voqii on v3rm | PM Bugs")
     if setclipboard then
         credits:AddButton({
             Name = "Copy v3rm url to clipboard",
             Callback = function()
-                setclipboard("https://v3rmillion.net/member.php?action=profile&uid=1229592")
+                setclipboard("")
             end
         })
 
